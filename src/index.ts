@@ -1,5 +1,5 @@
 import SuperJSON from "superjson";
-import { type ImageGenerationPrompt } from "./types";
+import { type ImageGenerationPrompt } from "@/types";
 
 const prompt: ImageGenerationPrompt = {
   scene: "A red smoothie on a premium kitchen countertop",
@@ -50,10 +50,12 @@ const prompt: ImageGenerationPrompt = {
   guidance_scale: 10,
 };
 
-const json = SuperJSON.stringify({
+const raw = SuperJSON.stringify({
   $schema:
     "https://raw.githubusercontent.com/xcaeser/generation-schemas/main/schemas/v1.0.0/image-generation.schema.json",
   ...prompt,
 });
 
-await Bun.write(Bun.file("prompt.json"), json);
+const pretty = JSON.stringify(JSON.parse(raw), null, 2); // prettified
+
+await Bun.write(Bun.file("prompt.json"), pretty);

@@ -2,8 +2,7 @@
   "name": "scripts",
   "module": "index.ts",
   "scripts": {
-    "dev": "bun run --watch index.ts",
-    "start": "bun run index.ts"
+    "start": "bun run src/index.ts "
   },
   "type": "module",
   "private": true,
