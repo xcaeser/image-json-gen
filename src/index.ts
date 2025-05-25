@@ -56,6 +56,6 @@ const raw = SuperJSON.stringify({
   ...prompt,
 });
 
-const pretty = JSON.stringify(JSON.parse(raw), null, 2); // prettified
+const pretty = JSON.stringify(SuperJSON.parse(raw), null, 2); // prettified
 
 await Bun.write(Bun.file("prompt.json"), pretty);
