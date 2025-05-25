@@ -18,8 +18,8 @@
 ### Installation
 
 ```bash
-git clone https://github.com/your-org/image-json-ge.git
-cd image-json-ge
+git clone https://github.com/your-org/image-json-gen.git
+cd image-json-gen
 bun install
 ```
 
